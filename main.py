@@ -7,4 +7,6 @@ def common_guesss(word: str) -> str | None:
         word_list: list[str] = words.read().splitlines()
 
 
-    
+    for i, match in enumerate(word_list, start=1):
+        if match == word: 
+            return f'Common match: {match} (#{i})
