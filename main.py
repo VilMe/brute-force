@@ -9,4 +9,6 @@ def common_guesss(word: str) -> str | None:
 
     for i, match in enumerate(word_list, start=1):
         if match == word: 
-            return f'Common match: {match} (#{i})
+            return f'Common match: {match} (#{i})'
+        
+def brute_force (word: str, length, int, digits: bool):
