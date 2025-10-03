@@ -2,7 +2,7 @@ import itertools
 import string
 import time
 
-def common_guesss(word: str) -> str | None:
+def common_guess(word: str) -> str | None:
     with open('words.txt', 'r') as words:
         word_list: list[str] = words.read().splitlines()
 
@@ -11,4 +11,10 @@ def common_guesss(word: str) -> str | None:
         if match == word: 
             return f'Common match: {match} (#{i})'
         
-def brute_force (word: str, length, int, digits: bool):
+# def brute_force (word: str, length, int, digits: bool):
+    
+
+
+
+if __name__ == '__main__':
+    print(common_guess('abc'))
