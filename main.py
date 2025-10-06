@@ -30,12 +30,12 @@ def brute_force (word: str, length: int, digits:bool = False, symbols:bool = Fal
         if guess == word:
             return f'"{word}" was cracked in {attempts:,} guesses.'
         
-        print(guess, attempts)
+        # print(guess, attempts)
 
 
 def main():
     print('Searching...')
-    password: str = 'xbc1' 
+    password: str = 'bbbbb' 
 
     start_time: float = time.perf_counter()
 
@@ -43,10 +43,12 @@ def main():
     if common_match := common_guess(password):
         print(common_match)
     else:
-        if cracked := brute_force(password, length=4, digits=True, symbols=False):
-            print(cracked)
-        else: 
-            print('There was no match...')
+        for i in range (4, 6):
+            if cracked := brute_force(password, length=i, digits=True, symbols=False):
+                print(cracked)
+                break
+            else: 
+                print('There was no match...')
     
     end_time:float = time.perf_counter()
     print(round(end_time - start_time, 2), 's')
